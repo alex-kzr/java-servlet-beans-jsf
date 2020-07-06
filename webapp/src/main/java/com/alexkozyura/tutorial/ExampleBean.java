@@ -1,9 +1,12 @@
 package com.alexkozyura.tutorial;
 
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import java.io.Serializable;
 
 @Named
-public class ExampleBean {
+@SessionScoped
+public class ExampleBean implements Serializable {
     private boolean loggedIn;
     private String login;
     private String password;
@@ -34,5 +37,8 @@ public class ExampleBean {
 
     public void doLogin(){
         loggedIn = true;
+    }
+
+    public ExampleBean() {
     }
 }
