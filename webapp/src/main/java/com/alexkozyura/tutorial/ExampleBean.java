@@ -4,13 +4,35 @@ import javax.inject.Named;
 
 @Named
 public class ExampleBean {
-    private String text = "CDI Example!";
+    private boolean loggedIn;
+    private String login;
+    private String password;
 
-    public String getText() {
-        return text;
+    public String getLogin() {
+        return login;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        this.loggedIn = loggedIn;
+    }
+
+    public void doLogin(){
+        loggedIn = true;
     }
 }
